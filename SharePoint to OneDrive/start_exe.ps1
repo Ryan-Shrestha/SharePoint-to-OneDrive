@@ -186,7 +186,7 @@ function Get-Items {
     $headers.Prefer = 'HonorNonIndexedQueriesWarningMayFailRandomly'
 
     # Graph API parameters that will filter contentType by Documents and Modified Date
-    $graphApiParameters = '?$expand=fields&$filter=fields/ContentType eq ' + "'Document' and fields/Modified gt '$modifiedDate'" 
+    $graphApiParameters = '?$expand=fields&$filter=fields/ContentType eq ' + "'Document' and fields/Modified lt '$modifiedDate'" 
 
     # Assign graph endpoint of sharepoint items for Site or SubSite collection
     if($SubSiteID -eq 'Empty'){
